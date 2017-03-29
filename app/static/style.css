@@ -1,0 +1,151 @@
+#heading {
+  color:#c82f6f;
+}
+
+#bot {
+  color: #d95a9e;
+}
+
+label {
+  text-transform: uppercase;
+  font-family: "Arial";
+  opacity: 0.5;
+}
+
+datalist {
+    z-index: 1000;
+}
+
+.panel-footer {
+  height: 100px;
+  background-color: #faf5f7;
+  overflow:hidden;
+  text-overflow: ellipsis;
+}
+
+.panel-footer h3 {
+  font-size: 14px;
+}
+
+.panel-panel {
+  margin-top: 50px;
+  border:0px;
+}
+
+.modal-title span {
+  color: rgb(142, 98, 85);
+  font-size: 9px;
+  margin-left:3%;
+}
+
+div.loved div.panel {
+  border-color: #a33459;
+}
+
+div.disliked div.panel div {
+  opacity:0.5;
+}
+
+.product_name {
+  display: inline;
+}
+
+.heart {
+  position:absolute;
+  left:40%;
+  top:10%;
+  font-size: 10em;
+  color:#ff53ab;
+  opacity: 0.7;
+}
+
+div:not(.loved) > div > div > div span.heart {
+  visibility: hidden;
+}
+
+div.loved > div > div > div span.heart {
+  visibility: visible;
+}
+
+.custom-file-input {
+    border-width: 1px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {
+  height: 1500px;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 1500px;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {height:auto;}
+}
+
+#skin-color {
+  width: 50px;
+  height: 50px;
+  left: 80%;
+  position: absolute;
+}
+
+.swatch-color {
+  width: 10%;
+  max-width: 50px;
+  height: inherit;
+  left: 80%;
+  position: absolute;
+  border-radius: 3px;
+}
+
+.modal-product-img {
+  width: 100%;
+  max-width: 300px;
+}
+
+.modal-swatch-img {
+  width: 50px;
+  border-radius: 3px;
+  position: absolute;
+  left: 10%;
+}
+
+.panel-product-img {
+  width: 100%;
+  max-width:200px;
+}
+
+#product-modal {
+  height:auto;
+}
+
+.modal-body {
+  height: 300px;
+  overflow-y: scroll;
+}

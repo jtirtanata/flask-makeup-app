@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% set is_start = True %}
+{% block page_title %} LIKES & DISLIKES {% endblock %}
+{% block js_file %}start{% endblock %}
+{% block body %}
+  <h1 id="heading">likes <span id="bot">and dislikes</span></h1>
+  <div class="row">
+    <small class="col-sm-4">
+    Click the products you love. Dismiss the ones you don't.
+    </small>
+  </div>
+
+  <div class="panel panel-default panel-panel">
+    <div class="panel-body" id="panel-holder">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+      <div class="form-group">
+        <input type="text" id="product-input" list="product-list" class="form-control" placeholder="Or type product names here!"/>
+        <datalist id="product-list">
+        </datalist>
+
+      </div>
+    </div>
+  </div>
+  <button onclick="fetch_popular(0);" class='btn'>next</button>
+  <a class='btn' id="done">finish</a>
+{% endblock %}

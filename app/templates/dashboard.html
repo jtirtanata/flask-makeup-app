@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% set is_dashboard = True %}
+{% block page_title %} DASHBOARD {% endblock %}
+{% block js_file %}dashboard{% endblock %}
+{% block body %}
+      <h1 id="heading">beauty <span id="bot">bot</span></h1>
+      <div class="col-sm-offset-4 col-sm-4">
+        <div class="input-group">
+          <input id="category" type="text" class="form-control" placeholder="input a product category here"/>
+          <span onclick="search();" class="input-group-addon"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+        </div>
+      </div>
+      <div class="panel panel-default panel-panel">
+        <div class="panel-body" id="panel-holder">
+        </div>
+      </div>
+
+      <div id="product-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title"></h4>
+              <small id="modal-product-brand"></small>
+            </div>
+            <div class="modal-body">
+            <div class="row">
+                <div class="col-sm-6">
+                  <img class="modal-product-img" />
+                  <img class="modal-swatch-img"  />
+                </div>
+                <div class="col-sm-6">
+                  <p id="details"></p>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <a type="button" class="btn btn-primary" id="buy-link">Buy</a>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+{% endblock %}

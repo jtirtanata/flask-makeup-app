@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% set is_profile = True %}
+{% block page_title %} PROFILE {% endblock %}
+{% block js_file %}profile{% endblock %}
+{% block body %}
+  <h1 id="heading">edit<span id="bot"> profile</span></h1>
+  <form enctype="multipart/form-data">
+<div class="form-group col-sm-offset-4 col-sm-3">
+    <div id="skin-color" style="background-color: rgba(255,255,255,0)"></div>
+    <img src="img/selfie.png" width="200px" id="upload-img"/>
+    <!-- <input type="file" id="file-upload" style="opacity:0;"/></br> -->
+
+    <input type="file" id="file-upload"/></br>
+  <small id="fileHelp" class="form-text text-muted">
+    Upload a picture of yourself here. Our skin detector works best if you take
+    a picture with good lighting and a plain background.
+  </small>
+</div>
+
+<div class="col-sm-offset-4 col-sm-3">
+  <div class="form-group">
+    <input type="text" class="form-control" list="eye-list" id="eye-input" placeholder="eye color">
+    <datalist id="eye-list">
+      <option value="blue" />
+      <option value="green" />
+      <option value="brown" />
+      <option value="gray" />
+      <option value="hazel" />
+    </datalist>
+  </div>
+
+  <div class="form-group">
+    <input type="number" min="12" class="form-control" placeholder="age" id="age-input">
+  </div>
+</div>
+</form>
+{% endblock %}
