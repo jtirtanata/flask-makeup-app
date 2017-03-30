@@ -1,5 +1,7 @@
 function uploadImage(input){
-  $("#upload-img").attr('src', "img/loading.gif");
+  $("#gif").show();
+  $("#upload-img").css("opacity", 0);
+
   var fd = new FormData();
   fd.append('file', input.files[0]);
 
@@ -15,6 +17,8 @@ function uploadImage(input){
       sessionStorage.imageFilename = filename;
       var skin_color = data['skin-color'];
       sessionStorage.skinColor = skin_color;
+      $("#gif").hide();
+      $("#upload-img").css("opacity", 100);
       $("#skin-color").css('background-color', skin_color);
       $("#upload-img").attr('src', filename);
     }

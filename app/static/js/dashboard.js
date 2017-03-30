@@ -58,13 +58,14 @@ function display_panels(data, panel_holder) {
     mu_el.innerHTML = panel;
     mu_el.getElementsByClassName('product_name')[0].innerText = data['product_name'][i];
     mu_el.getElementsByClassName('brand_name')[0].innerText = data['brand_name'][i];
-    
+
     var img_path = 'img/product/product-' + data['productid'][i] + '.jpg';
     mu_el.getElementsByClassName('panel-product-img')[0].setAttribute('src', img_path);
     if ("url" in data) {
-      var swatch = document.createElement('img')
+      var swatch = document.createElement('img');
       swatch.setAttribute('class', 'swatch-color');
-      swatch.setAttribute('src', data['url'][i]);
+      var swatch_path = 'img/swatch/' + data['sku'][i] + '.jpg';
+      swatch.setAttribute('src', swatch_path);
       mu_el.getElementsByClassName('panel-body')[0].prepend(swatch);
     }
     mu_el.setAttribute('data-val',i);
@@ -78,7 +79,7 @@ function activate_handlers() {
     pid = this.parentElement.parentElement.getAttribute('data-val');
     pid = parseInt(pid);
     $('#product-modal').attr('data-val', window.cur_data['productid'][pid]);
-    
+
     var img_path = 'img/product/product-' + window.cur_data['productid'][pid] + '.jpg';
     $('.modal-product-img').first().attr('src', img_path);
     $('.modal-title').first().text(window.cur_data['product_name'][pid]);
@@ -88,7 +89,8 @@ function activate_handlers() {
     $("#buy-link").attr("href", window.cur_data["product_url"][pid]);
     if ("url" in window.cur_data) {
       var swatch = $('.modal-swatch-img').first();
-      swatch.attr('src', window.cur_data['url'][pid]);
+      var swatch_path = 'img/swatch/' + window.cur_data['sku'][pid] + '.jpg';
+      swatch.attr('src', swatch_path);
       swatch.show();
       var sku = window.cur_data['sku'][pid];
       $('.modal-title').first().append('<span>' + sku + '</span>');

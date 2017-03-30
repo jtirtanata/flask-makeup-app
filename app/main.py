@@ -59,12 +59,13 @@ def inputphoto():
     save_path = os.path.join(UPDIR, save_name)
     i = 1
     while os.path.isfile(save_path):
-        print(save_path)
         save_name = '{}-{}.{}'.format(name, i, ext)
         save_path = os.path.join(UPDIR, save_name)
         i += 1
     f.save(save_path)
-    skin_color = rec.get_skin_color(Image.open(save_path))
+    img = Image.open(save_path)
+    img = img.convert('RGB')
+    skin_color = rec.get_skin_color(img)
     skin_color = [str(int(x)) for x in skin_color]
     skin_color = 'rgb({})'.format(','.join(skin_color))
     return flask.jsonify({"filename": "img/upload/" + save_name, "skin-color": skin_color})

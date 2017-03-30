@@ -4,7 +4,7 @@ from sklearn.metrics import pairwise
 import numpy as np
 import pandas as pd
 
-basic_info = "brand_name, img_url, product_name, productid, product_url, love_count"
+basic_info = "details, brand_name, img_url, product_name, productid, product_url, love_count"
 
 class ColorMatcher(object):
     def __init__(self):
@@ -14,7 +14,7 @@ class ColorMatcher(object):
 
     def compute_skin_color(self, img):
         face = self.im_p.crop_face(img, 45)
-        face = self.im_p.crop_face(img, 45)
+        face = face.resize((299, 299))
         face_arr = self.im_p.img_to_arr(face)
         assert face_arr.shape == (299, 299, 3)
         pred = self.model.predict(np.expand_dims(np.swapaxes(face_arr, 0, 2), axis=0))
